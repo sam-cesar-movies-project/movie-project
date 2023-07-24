@@ -137,13 +137,23 @@ const renderFavoriteMovies = async (favoritesParam) => {
     const favMoviesDiv = document.querySelector('#favorite-movies');
     favoritesParam.forEach(favorite => {
         const dynamicMovieCard = document.createElement('div');
-        dynamicMovieCard.classList.add('align-items-center');
+        dynamicMovieCard.classList.add("align-items-center", "favorite-cards", "col");
         dynamicMovieCard.innerHTML = `
-            <h2>${favorite.original_title}</h2>
-            <p>Popularity: ${favorite.popularity}</p>
-            <p>${favorite.overview}</p>
+            <form>
+                <h2>${favorite.original_title}</h2>
+                <p>Popularity: ${favorite.popularity}</p>
+                <p>${favorite.overview}</p>
+                <button class="remove-from-favorites">Remove</button>
+            </form>
         `;
         favMoviesDiv.appendChild(dynamicMovieCard);
+        let removeBtn = dynamicMovieCard.querySelector('.remove-from-favorites');
+        removeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log(dynamicMovieCard.innerHTML);
+
+            // dynamicMovieCard.remove();
+        })
     })
 }
 
