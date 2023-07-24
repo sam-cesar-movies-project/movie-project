@@ -124,18 +124,35 @@ function getGenreName (genres, id) {
 
 // ---------------------------------------------------------------------------------------------------
 
+// 'GETTER function' ... get movies from favorites, db.json
 const getFavoriteMovies = async () => {
     const response = await fetch(`${DOMAIN}/favorites`);
     const favorites = await response.json();
     return favorites;
 }
 
+// 'RENDER function' ... render favorite movies dynamically
+const renderFavoriteMovies = async (favoritesParam) => {
+    console.log(favoritesParam);
+    const favMoviesDiv = document.querySelector('#favorite-movies');
+    favoritesParam.forEach(favorite => {
+        const dynamicMovieCard = document.createElement('div');
+        dynamicMovieCard.classList.add('align-items-center');
+        dynamicMovieCard.innerHTML = `
+            <h2>${favorite.original_title}</h2>
+            <p>Popularity: ${favorite.popularity}</p>
+            <p>${favorite.overview}</p>
+        `;
+        favMoviesDiv.appendChild(dynamicMovieCard);
+    })
+}
 
 
 
 (async() => {
     const favorites = await getFavoriteMovies();
     console.log(favorites);
+    renderFavoriteMovies(favorites);
 
 })();
 
