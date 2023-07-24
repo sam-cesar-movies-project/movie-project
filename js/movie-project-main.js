@@ -86,7 +86,7 @@ function getGenreName (genres, id) {
 }
 
 
-// ---------------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------
 // IIFE...
 (() => {
     // Variables
@@ -123,7 +123,7 @@ function getGenreName (genres, id) {
 
 })();
 
-// ---------------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------
 // Delete favMovie function...
 const deleteFavMovie = async (id) => {
     const options = {
@@ -136,8 +136,6 @@ const deleteFavMovie = async (id) => {
     const apiResonse = await response.json();
     return apiResonse;
 };
-
-
 
 // 'GETTER function' ... get movies from favorites, db.json
 const getFavoriteMovies = async () => {
@@ -159,6 +157,9 @@ const renderFavoriteMovies = async (favoritesParam) => {
                 <p>Popularity: ${favorite.popularity}</p>
                 <p>${favorite.overview}</p>
                 <button class="remove-from-favorites">Remove</button>
+                <div>
+                    <img src="${favorite.poster_path}">
+                </div>
             </form>
         `;
         favMoviesDiv.appendChild(dynamicMovieCard);
@@ -173,8 +174,8 @@ const renderFavoriteMovies = async (favoritesParam) => {
     })
 }
 
-
-
+// ------------------------------------------------------------------------------------------------
+// IIFE...
 (async() => {
     const favorites = await getFavoriteMovies();
     console.log(favorites);
@@ -182,4 +183,5 @@ const renderFavoriteMovies = async (favoritesParam) => {
 
 })();
 
+// ------------------------------------------------------------------------------------------------
 
