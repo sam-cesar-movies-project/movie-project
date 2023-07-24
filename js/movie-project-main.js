@@ -2,6 +2,7 @@
 console.log(`hello from movie-project-main.js`);
 
 const DOMAIN = 'http://localhost:3000';
+// fire up json server: json-server --watch data/db.json
 
 // Fetch & .then
 
@@ -123,6 +124,20 @@ function getGenreName (genres, id) {
 })();
 
 // ---------------------------------------------------------------------------------------------------
+// Delete favMovie function...
+const deleteFavMovie = async (id) => {
+    const options = {
+        method: 'DELETE',
+        headers: {
+            'Content-Type' : 'application/json'
+        }
+    }
+    const response = await fetch(`${DOMAIN}/favorites/${id}`, options);
+    const apiResonse = await response.json();
+    return apiResonse;
+};
+
+
 
 // 'GETTER function' ... get movies from favorites, db.json
 const getFavoriteMovies = async () => {
@@ -148,11 +163,12 @@ const renderFavoriteMovies = async (favoritesParam) => {
         `;
         favMoviesDiv.appendChild(dynamicMovieCard);
         let removeBtn = dynamicMovieCard.querySelector('.remove-from-favorites');
-        removeBtn.addEventListener('click', (e) => {
+        removeBtn.addEventListener('click', async(e) => {
             e.preventDefault();
             console.log(dynamicMovieCard.innerHTML);
-
-            // dynamicMovieCard.remove();
+            const response = await deleteFavMovie(favorite.id);
+            console.log(response);
+            dynamicMovieCard.remove();
         })
     })
 }
