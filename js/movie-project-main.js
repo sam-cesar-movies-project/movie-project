@@ -7,7 +7,14 @@ const DOMAIN = 'http://localhost:3000';
 
 
 
+//////////////////////////////////////////////////////////////////////////////////////////////////
+// Variables....
+const searchBar = document.querySelector('#search-bar');
+/////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+// Functions...
 // GETTER Get Movies by Search function:
 async function getMoviesBySearch(queryParam) {
     const baseUrl = 'https://api.themoviedb.org/3/search/movie';
@@ -88,9 +95,31 @@ function getGenreName (genres, id) {
 }
 
 
-(async () => {
+
+// Function to handle movie search and filter results
+async function handleMovieSearch (genres) {
     // Variables
-    const searchBar = document.querySelector('#search-bar');
+    // const searchBar = document.querySelector('#search-bar');
+    const moviesData = await getMoviesBySearch(searchBar.value);
+    searchBar.value = '';
+    console.log(`async & await => `, moviesData);
+
+    const firstFilter = moviesData.results.filter((movie) => {
+        return movie.original_language === 'en' && movie.backdrop_path !== null;
+    }).map((movie) => {
+        return {
+            ...movie,
+            genre_names: movie.genre_ids.map(id => getGenreName(genres.genres, id))
+        };
+    });
+
+    console.log(`firstFilter => `, firstFilter);
+    return firstFilter;
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+// ------------------------------------------------------------------------------------------------
+// IIFE...
+(async () => {
 
     // Function to fetch all movies and log the data
     discoverAllMovies().then(data => {
@@ -102,34 +131,23 @@ function getGenreName (genres, id) {
         console.log(data);
     });
 
-    // Function to handle movie search and filter results
-    const handleMovieSearch = async (genres) => {
-        const moviesData = await getMoviesBySearch(searchBar.value);
-        searchBar.value = '';
-        console.log(`async & await => `, moviesData);
-
-        const firstFilter = moviesData.results.filter((movie) => {
-            return movie.original_language === 'en' && movie.backdrop_path !== null;
-        }).map((movie) => {
-            return {
-                ...movie,
-                genre_names: movie.genre_ids.map(id => getGenreName(genres.genres, id))
-            };
-        });
-
-        console.log(`firstFilter => `, firstFilter);
-    };
 
     // Fetch genres and set up event listener for search bar
     genreList().then(genres => {
-        searchBar.addEventListener('keyup', (e) => {
+        searchBar.addEventListener('keyup', async(e) => {
             if (e.keyCode === 13) {
                 console.log(searchBar.value);
-                handleMovieSearch(genres);
+                const firstFilter = await handleMovieSearch(genres);
+                console.log(`from within event listener...=>`, firstFilter); // Now firstFilter variable is available!!!
             }
         });
     });
+
 })();
+// ------------------------------------------------------------------------------------------------
+
+
+
 
 // ------------------------------------------------------------------------------------------------
 // Delete favMovie function...
@@ -162,6 +180,7 @@ const renderFavoriteMovies = async (favoritesParam) => {
         dynamicMovieCard.innerHTML = `
             <form>
                 <h2>${favorite.original_title}</h2>
+                <p>${favorite.genre_names.join(", ")}</p>
                 <p>Popularity: ${favorite.popularity}</p>
                 <p>${favorite.overview}</p>
                 <button class="remove-from-favorites">Remove</button>
@@ -189,4 +208,3 @@ const renderFavoriteMovies = async (favoritesParam) => {
 })();
 
 // ------------------------------------------------------------------------------------------------
-
