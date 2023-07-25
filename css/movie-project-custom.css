@@ -5,9 +5,10 @@
 }
 
 .favorite-cards {
-    border: solid black .5rem;
+    border: solid white .2rem;
     width: calc(20% - 10px);
     flex: 0 0 calc(20% - 10px);
+    /*color: white;*/
 }
 
 img {
@@ -15,13 +16,22 @@ img {
 }
 
 .searched-cards {
-    border: solid black .5rem;
+    border: solid white .5rem;
     width: calc(20% - 10px);
     flex: 0 0 calc(20% - 10px);
+    /*color:white;*/
 }
 
 .overview {
     max-height: 190px;
     max-width: 215px;
     overflow: hidden;
+}
+
+.background{
+    background-color: black;
+}
+#search-bar{
+    width: 40rem;
+
 }

@@ -95,7 +95,8 @@
       "genre_names": [
         "Drama",
         "Romance"
-      ]
+      ],
+      "rating": 5
     },
     {
       "adult": false,
