@@ -1,0 +1,60 @@
+// ------------------------------------------------------------------------------------------------
+// // Delete favMovie function...
+// const deleteFavMovie = async (id) => {
+//     const options = {
+//         method: 'DELETE',
+//         headers: {
+//             'Content-Type' : 'application/json'
+//         }
+//     }
+//     const response = await fetch(`${DOMAIN}/favorites/${id}`, options);
+//     const apiResonse = await response.json();
+//     return apiResonse;
+// };
+//
+// // 'GETTER function' ... get movies from favorites, db.json
+// const getFavoriteMovies = async () => {
+//     const response = await fetch(`${DOMAIN}/favorites`);
+//     const favorites = await response.json();
+//     return favorites;
+// }
+//
+// // 'RENDER function' ... render favorite movies dynamically
+// const renderFavoriteMovies = async (favoritesParam) => {
+//     console.log(favoritesParam);
+//     const favMoviesDiv = document.querySelector('#favorite-movies');
+//     favoritesParam.forEach(favorite => {
+//         const dynamicMovieCard = document.createElement('div');
+//         dynamicMovieCard.classList.add("align-items-center", "favorite-cards", "col");
+//         dynamicMovieCard.innerHTML = `
+//             <form>
+//                 <img src="https://image.tmdb.org/t/p/w500/${favorite.poster_path}">
+//                 <h2>${favorite.original_title}</h2>
+//                 <p>${favorite.genre_names.join(", ")}</p>
+//                 <p>Popularity: ${favorite.popularity}</p>
+//                 <p>${favorite.overview}</p>
+//                 <button class="remove-from-favorites">Remove</button>
+//             </form>
+//         `;
+//         favMoviesDiv.appendChild(dynamicMovieCard);
+//         let removeBtn = dynamicMovieCard.querySelector('.remove-from-favorites');
+//         removeBtn.addEventListener('click', async(e) => {
+//             e.preventDefault();
+//             console.log(dynamicMovieCard.innerHTML);
+//             const response = await deleteFavMovie(favorite.id);
+//             console.log(response);
+//             dynamicMovieCard.remove();
+//         })
+//     })
+// }
+
+// ------------------------------------------------------------------------------------------------
+// IIFE...
+// (async() => {
+//     // const favorites = await getFavoriteMovies();
+//     // console.log(favorites);
+//     // renderFavoriteMovies(favorites);
+//
+// })();
+
+// ------------------------------------------------------------------------------------------------

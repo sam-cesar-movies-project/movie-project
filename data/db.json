@@ -100,52 +100,27 @@
     },
     {
       "adult": false,
-      "backdrop_path": "/8yYuFjRsozwOckhAaTHRLTiDwml.jpg",
+      "backdrop_path": "/mDfJG3LC3Dqb67AZ52x3Z0jU0uB.jpg",
       "genre_ids": [
         12,
-        16,
-        35,
-        10751
+        28,
+        878
       ],
-      "id": 127380,
+      "id": 299536,
       "original_language": "en",
-      "original_title": "Finding Dory",
-      "overview": "Dory is reunited with her friends Nemo and Marlin in the search for answers about her past. What can she remember? Who are her parents? And where did she learn to speak Whale?",
-      "popularity": 43.785,
-      "poster_path": "/3UVe8NL1E2ZdUZ9EDlKGJY5UzE.jpg",
-      "release_date": "2016-06-16",
-      "title": "Finding Dory",
+      "original_title": "Avengers: Infinity War",
+      "overview": "As the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger has emerged from the cosmic shadows: Thanos. A despot of intergalactic infamy, his goal is to collect all six Infinity Stones, artifacts of unimaginable power, and use them to inflict his twisted will on all of reality. Everything the Avengers have fought for has led up to this moment - the fate of Earth and existence itself has never been more uncertain.",
+      "popularity": 218.548,
+      "poster_path": "/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
+      "release_date": "2018-04-25",
+      "title": "Avengers: Infinity War",
       "video": false,
-      "vote_average": 7.042,
-      "vote_count": 11305,
+      "vote_average": 8.261,
+      "vote_count": 27290,
       "genre_names": [
         "Adventure",
-        "Animation",
-        "Comedy",
-        "Family"
-      ]
-    },
-    {
-      "adult": false,
-      "backdrop_path": "/smAnf46gZL1jXuP9nZvkM3Uynav.jpg",
-      "genre_ids": [
-        10752,
-        28
-      ],
-      "id": 190859,
-      "original_language": "en",
-      "original_title": "American Sniper",
-      "overview": "U.S. Navy SEAL Chris Kyle takes his sole mission—protect his comrades—to heart and becomes one of the most lethal snipers in American history. His pinpoint accuracy not only saves countless lives but also makes him a prime target of insurgents. Despite grave danger and his struggle to be a good husband and father to his family back in the States, Kyle serves four tours of duty in Iraq. However, when he finally returns home, he finds that he cannot leave the war behind.",
-      "popularity": 78.245,
-      "poster_path": "/i1U46OwMc6vlm7OoSUKfqUH615e.jpg",
-      "release_date": "2014-12-25",
-      "title": "American Sniper",
-      "video": false,
-      "vote_average": 7.429,
-      "vote_count": 11961,
-      "genre_names": [
-        "War",
-        "Action"
+        "Action",
+        "Science Fiction"
       ]
     }
   ]

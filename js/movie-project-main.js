@@ -9,7 +9,7 @@ const DOMAIN = 'http://localhost:3000';
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 // Variables....
-const searchBar = document.querySelector('#search-bar');
+// const searchBar = document.querySelector('#search-bar');
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -58,7 +58,6 @@ async function discoverAllMovies() {
     }
 }
 
-
 // Fetch genreList
 // This gives me access to all genres, genre id & genre name.  Turn this into a function? Declare it as a variable to use and map() corresponding genres?
 async function genreList() {
@@ -94,12 +93,10 @@ function getGenreName (genres, id) {
     return genre.name;
 }
 
-
-
 // Function to handle movie search and filter results
 async function handleMovieSearch (genres) {
     // Variables
-    // const searchBar = document.querySelector('#search-bar');
+    const searchBar = document.querySelector('#search-bar');
     const moviesData = await getMoviesBySearch(searchBar.value);
     searchBar.value = '';
     console.log(`async & await => `, moviesData);
@@ -117,39 +114,8 @@ async function handleMovieSearch (genres) {
     return firstFilter;
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////
-// ------------------------------------------------------------------------------------------------
-// IIFE...
-(async () => {
 
-    // Function to fetch all movies and log the data
-    discoverAllMovies().then(data => {
-        console.log(data);
-    });
-
-    // Function to fetch the list of genres and log the data
-    genreList().then(data => {
-        console.log(data);
-    });
-
-
-    // Fetch genres and set up event listener for search bar
-    genreList().then(genres => {
-        searchBar.addEventListener('keyup', async(e) => {
-            if (e.keyCode === 13) {
-                console.log(searchBar.value);
-                const firstFilter = await handleMovieSearch(genres);
-                console.log(`from within event listener...=>`, firstFilter); // Now firstFilter variable is available!!!
-            }
-        });
-    });
-
-})();
-// ------------------------------------------------------------------------------------------------
-
-
-
-
-// ------------------------------------------------------------------------------------------------
+// CRUD ...............................
 // Delete favMovie function...
 const deleteFavMovie = async (id) => {
     const options = {
@@ -201,11 +167,38 @@ const renderFavoriteMovies = async (favoritesParam) => {
 
 // ------------------------------------------------------------------------------------------------
 // IIFE...
-(async() => {
+(async () => {
+
+    // Function to fetch all movies and log the data
+    discoverAllMovies().then(data => {
+        console.log(data);
+    });
+
+    // Function to fetch the list of genres and log the data
+    genreList().then(data => {
+        console.log(data);
+    });
+
+
+    // Fetch genres and set up event listener for search bar
+    genreList().then(genres => {
+        const searchBar = document.querySelector('#search-bar');
+        searchBar.addEventListener('keyup', async(e) => {
+            if (e.keyCode === 13) {
+                console.log(searchBar.value);
+                const firstFilter = await handleMovieSearch(genres);
+                console.log(`from within event listener...=>`, firstFilter); // Now firstFilter variable is available!!!
+            }
+        });
+    });
+
+
     const favorites = await getFavoriteMovies();
     console.log(favorites);
     renderFavoriteMovies(favorites);
 
-})();
 
+
+})();
 // ------------------------------------------------------------------------------------------------
+
