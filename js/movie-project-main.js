@@ -179,10 +179,11 @@ const renderFavoriteMovies = async (favoritesParam) => {
         dynamicMovieCard.classList.add("align-items-center", "favorite-cards", "col");
         dynamicMovieCard.innerHTML = `
             <form>
+                <img src="https://image.tmdb.org/t/p/w500/${favorite.poster_path}">
                 <h2>${favorite.original_title}</h2>
                 <p>${favorite.genre_names.join(", ")}</p>
                 <p>Popularity: ${favorite.popularity}</p>
-                <p>${favorite.overview}</p>
+                <p>${favorite.overview}</p>           
                 <button class="remove-from-favorites">Remove</button>
             </form>
         `;

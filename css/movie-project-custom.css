@@ -7,3 +7,7 @@
 .favorite-cards {
     border: solid black .5rem;
 }
+
+img {
+    max-width: 100%;
+}
