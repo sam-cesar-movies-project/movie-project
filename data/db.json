@@ -71,7 +71,8 @@
         "Adventure",
         "Action",
         "Science Fiction"
-      ]
+      ],
+      "rating": 5
     },
     {
       "adult": false,
