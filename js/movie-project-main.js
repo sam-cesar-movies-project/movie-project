@@ -143,10 +143,24 @@ const addToFavorites = async (resultParam) => {
 }
 
 // Edit Favorites...
-const editFavorites = async (favoriteId) => {
-    const options = {
-
+const editFavorites = async (favoriteObj, selectedRating) => {
+    // console.log(favoriteId, selectedRating);
+    // Find the movie with the passed in id
+    // add update the rating
+    const movie = {
+        ...favoriteObj,
+        rating: selectedRating
     }
+    const options = {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(movie)
+    };
+    const response = await fetch(`${DOMAIN}/favorites/${favoriteObj.id}`, options);
+    const apiResponse = response.json();
+    return apiResponse;
 }
 
 // 'RENDER function' ... render favorite movies dynamically
@@ -164,7 +178,18 @@ const renderFavoriteMovies = async (favoritesParam) => {
                 <p>Popularity: ${favorite.popularity}</p>
                 <p class="overview">${favorite.overview}</p>           
                 <button class="remove-from-favorites">Remove</button>
-                <button>edit</button>
+                <div>
+                    <label for="movie-rating">Rate</label>
+                    <select id="movie-rating" name="movie-rating">
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1" selected>1</option>
+                    </select>
+                    <button id="rate-btn">submit rating</button>
+                </div>
+                
             </form>
         `;
         favMoviesDiv.appendChild(dynamicMovieCard);
@@ -175,6 +200,14 @@ const renderFavoriteMovies = async (favoritesParam) => {
             const response = await deleteFavMovie(favorite.id);
             console.log(response);
             dynamicMovieCard.remove();
+        })
+        let ratingSelect = dynamicMovieCard.querySelector('#movie-rating');
+        let ratingBtn = dynamicMovieCard.querySelector('#rate-btn');
+        ratingBtn.addEventListener('click', async(e) => {
+            e.preventDefault();
+            console.log(ratingSelect.value);
+            const response = await editFavorites(favorite, ratingSelect.value);
+            console.log(response);
         })
     })
 };
