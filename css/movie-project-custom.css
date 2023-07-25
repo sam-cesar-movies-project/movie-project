@@ -5,10 +5,8 @@
 }
 
 .favorite-cards {
-    /*border: solid white .2rem;*/
     width: calc(20% - 10px);
     flex: 0 0 calc(20% - 10px);
-    /*color: white;*/
 }
 
 img {
@@ -16,11 +14,9 @@ img {
 }
 
 .searched-cards {
-    /*border: solid white .5rem;*/
     width: calc(20% - 10px);
     flex: 0 0 calc(20% - 10px);
     margin-bottom: 5rem;
-    /*color:white;*/
 }
 
 .overview {
@@ -29,14 +25,21 @@ img {
     overflow: hidden;
 }
 
-.background{
+.background {
     background-color: black;
 }
-#search-bar{
+
+#search-bar {
     width: 40rem;
 
 }
 
+.add-to-favorites {
+    border-radius: 2rem;
+    color: black;
+}
+
+/*start of card effect for searched movies*/
 .myCard {
     background-color: transparent;
     width: 190px;
@@ -126,3 +129,7 @@ img {
         opacity: 0.3;
     }
 }
+
+/*end of card effect for searched movies*/
+
+/*start of card effect for favorite cards*/
