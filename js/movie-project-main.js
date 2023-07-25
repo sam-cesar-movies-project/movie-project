@@ -231,7 +231,7 @@ const renderSearchedMovies = async (filterParam) => {
                             <img src="https://image.tmdb.org/t/p/w500/${result.poster_path}">                           
                         </div>
                         <div class="backSide">
-                        <h2>${result.original_title}</h2>
+                        <p>${result.original_title}</p>
                             <p>${result.genre_names.join(", ")}</p>
                             <p>Popularity: ${result.popularity}</p>
                             <p class="overview">${result.overview}</p>
