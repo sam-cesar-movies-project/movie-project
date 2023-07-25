@@ -5,14 +5,6 @@ const DOMAIN = 'http://localhost:3000';
 // fire up json server: json-server --watch data/db.json
 
 
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////////
-// Variables....
-// const searchBar = document.querySelector('#search-bar');
-/////////////////////////////////////////////////////////////////////////////////////////////////
-
-
 //////////////////////////////////////////////////////////////////////////////////////////////////
 // Functions...
 // GETTER Get Movies by Search function:
@@ -148,6 +140,13 @@ const addToFavorites = async (resultParam) => {
     const response = await fetch(`${DOMAIN}/favorites`, options);
     const apiResponse = response.json();
     return apiResponse;
+}
+
+// Edit Favorites...
+const editFavorites = async (favoriteId) => {
+    const options = {
+
+    }
 }
 
 // 'RENDER function' ... render favorite movies dynamically
