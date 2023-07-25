@@ -175,25 +175,32 @@ const renderFavoriteMovies = async (favoritesParam) => {
         dynamicMovieCard.classList.add("align-items-center", "favorite-cards", "col");
         dynamicMovieCard.innerHTML = `
             <form>
-                <img src="https://image.tmdb.org/t/p/w500/${favorite.poster_path}">
-                <h2>${favorite.original_title}</h2>
-                <p>${favorite.genre_names.join(", ")}</p>
-                <p>Rating: ${favorite.rating ? favorite.rating : 1}</p>
-                <p>Popularity: ${favorite.popularity}</p>
-                <p class="overview">${favorite.overview}</p>           
-                <button class="remove-from-favorites">Remove</button>
-                <div>
-                    <label for="movie-rating">Rate</label>
-                    <select id="movie-rating" name="movie-rating">
-                        <option value="5">5</option>
-                        <option value="4">4</option>
-                        <option value="3">3</option>
-                        <option value="2">2</option>
-                        <option value="1" selected>1</option>
-                    </select>
-                    <button id="rate-btn">submit rating</button>
-                </div>
-                
+                <div class="myCard">
+                    <div class="innerCard">
+                        <div class="frontSide">
+                            <img src="https://image.tmdb.org/t/p/w500/${favorite.poster_path}">
+                        </div>
+                        <div class="backSide">
+                            <h2>${favorite.original_title}</h2>
+                            <p>${favorite.genre_names.join(", ")}</p>
+                            <p>Rating: ${favorite.rating ? favorite.rating : 1}</p>
+                            <p>Popularity: ${favorite.popularity}</p>
+                            <p class="overview">${favorite.overview}</p>           
+                            <button class="remove-from-favorites">Remove</button>
+                            <div>
+                                <label for="movie-rating">Rate</label>
+                                <select id="movie-rating" name="movie-rating">
+                                    <option value="5">5</option>
+                                    <option value="4">4</option>
+                                    <option value="3">3</option>
+                                    <option value="2">2</option>
+                                    <option value="1" selected>1</option>
+                                </select>
+                                <button id="rate-btn">submit rating</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>               
             </form>
         `;
         favMoviesDiv.appendChild(dynamicMovieCard);
