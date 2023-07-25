@@ -198,7 +198,7 @@ function getGenreName(genres, id) {
 //
 // })();
 
-(() => {
+(async () => {
     // Variables
     const searchBar = document.querySelector('#search-bar');
 
@@ -216,7 +216,7 @@ function getGenreName(genres, id) {
     const handleMovieSearch = async (genres) => {
         const moviesData = await getMoviesBySearch(searchBar.value);
         searchBar.value = '';
-        console.log(`Fetch & then => `, moviesData);
+        console.log(`async & await => `, moviesData);
 
         const firstFilter = moviesData.results.filter((movie) => {
             return movie.original_language === 'en' && movie.backdrop_path !== null;
@@ -240,9 +240,6 @@ function getGenreName(genres, id) {
         });
     });
 })();
-
-
-
 
 
 // ------------------------------------------------------------------------------------------------
@@ -279,9 +276,6 @@ const renderFavoriteMovies = async (favoritesParam) => {
                 <p>Popularity: ${favorite.popularity}</p>
                 <p>${favorite.overview}</p>
                 <button class="remove-from-favorites">Remove</button>
-                <div>
-                    <img src="${favorite.poster_path}">
-                </div>
             </form>
         `;
         favMoviesDiv.appendChild(dynamicMovieCard);
