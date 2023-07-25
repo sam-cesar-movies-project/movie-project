@@ -181,10 +181,10 @@ const renderFavoriteMovies = async (favoritesParam) => {
                             <img src="https://image.tmdb.org/t/p/w500/${favorite.poster_path}">
                         </div>
                         <div class="backSide">
-                            <h2>${favorite.original_title}</h2>
+                            <h2 class="backSide-text-color">${favorite.original_title}</h2>
                             <p>${favorite.genre_names.join(", ")}</p>
-                            <p>Rating: ${favorite.rating ? favorite.rating : 1}</p>
-                            <p>Popularity: ${favorite.popularity}</p>
+                            <p class="backSide-text-color">Rating: ${favorite.rating ? favorite.rating : 1}</p>
+                            <p class="backSide-text-color">Popularity: ${favorite.popularity}</p>
                             <p class="overview">${favorite.overview}</p>           
                             <button class="remove-from-favorites">Remove</button>
                             <div>
@@ -238,9 +238,9 @@ const renderSearchedMovies = async (filterParam) => {
                             <img src="https://image.tmdb.org/t/p/w500/${result.poster_path}">                           
                         </div>
                         <div class="backSide">
-                        <p>${result.original_title}</p>
+                        <h2 class="backSide-text-color">${result.original_title}</h2>
                             <p>${result.genre_names.join(", ")}</p>
-                            <p>Popularity: ${result.popularity}</p>
+                            <p class="backSide-text-color">Popularity: ${result.popularity}</p>
                             <p class="overview">${result.overview}</p>
                             <button class="add-to-favorites">Add to Favorites</button>
                         </div>

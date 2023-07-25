@@ -7,6 +7,7 @@
 .favorite-cards {
     width: calc(20% - 10px);
     flex: 0 0 calc(20% - 10px);
+    margin-bottom: 5rem;
 }
 
 img {
@@ -38,7 +39,17 @@ img {
     border-radius: 2rem;
     color: black;
 }
-
+.backSide p{
+    margin-bottom: 0;
+    font-weight: normal;
+}
+.backSide h2{
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+.backSide-text-color{
+    color: #a89d9d;
+}
 /*start of card effect for searched movies*/
 .myCard {
     background-color: transparent;
@@ -87,6 +98,7 @@ img {
     font-weight: 700;
 }
 
+
 .frontSide,
 .frontSide::before {
     background: linear-gradient(43deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%);
@@ -94,7 +106,7 @@ img {
 
 .backSide,
 .backSide::before {
-    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    background-image: linear-gradient(160deg, #6E2121 0%, #A62A2B 100%);
 }
 
 .backSide {
