@@ -122,6 +122,52 @@
         "Action",
         "Science Fiction"
       ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/zndjQ64SrM5Bo6xMuofCYP8yBhd.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 22881,
+      "original_language": "en",
+      "original_title": "The Blind Side",
+      "overview": "The story of Michael Oher, a homeless and traumatized boy who became an All American football player and first round NFL draft pick with the help of a caring woman and her family.",
+      "popularity": 138.368,
+      "poster_path": "/bMgq7VBriuBFknXEe9E9pVBYGZq.jpg",
+      "release_date": "2009-11-20",
+      "title": "The Blind Side",
+      "video": false,
+      "vote_average": 7.687,
+      "vote_count": 5751,
+      "genre_names": [
+        "Drama"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/ctMserH8g2SeOAnCw5gFjdQF8mo.jpg",
+      "genre_ids": [
+        35,
+        12,
+        14
+      ],
+      "id": 346698,
+      "original_language": "en",
+      "original_title": "Barbie",
+      "overview": "Barbie and Ken are having the time of their lives in the colorful and seemingly perfect world of Barbie Land. However, when they get a chance to go to the real world, they soon discover the joys and perils of living among humans.",
+      "popularity": 7742.606,
+      "poster_path": "/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg",
+      "release_date": "2023-07-19",
+      "title": "Barbie",
+      "video": false,
+      "vote_average": 7.652,
+      "vote_count": 1000,
+      "genre_names": [
+        "Comedy",
+        "Adventure",
+        "Fantasy"
+      ]
     }
   ]
 }

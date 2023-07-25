@@ -197,7 +197,7 @@ const renderSearchedMovies = async (filterParam) => {
             </form>
         `;
         serchedMovieParentDiv.appendChild(dynamicSearchedMovie);
-        let addBtn = dynamicSearchedMovie.querySelector('#add-to-favorites');
+        let addBtn = dynamicSearchedMovie.querySelector('.add-to-favorites');
         addBtn.addEventListener('click', async(e) => {
             e.preventDefault();
             console.log(serchedMovieParentDiv);
@@ -231,6 +231,7 @@ const renderSearchedMovies = async (filterParam) => {
                 const firstFilter = await handleMovieSearch(genres);
                 console.log(`from within event listener...=>`, firstFilter); // Now firstFilter variable is available!!!
                 renderSearchedMovies(firstFilter);
+
             }
         });
     });
