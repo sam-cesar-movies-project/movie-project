@@ -181,12 +181,15 @@ const renderFavoriteMovies = async (favoritesParam) => {
                             <img src="https://image.tmdb.org/t/p/w500/${favorite.poster_path}">
                         </div>
                         <div class="backSide">
-                            <h2 class="backSide-text-color">${favorite.original_title}</h2>
+                            <div>
+                                <button class="remove-from-favorites">X</button>
+                                <h2 class="backSide-text-color">${favorite.original_title}</h2>
+                            </div>
                             <p>${favorite.genre_names.join(", ")}</p>
                             <p class="backSide-text-color">Rating: ${favorite.rating ? favorite.rating : 1}</p>
                             <p class="backSide-text-color">Popularity: ${favorite.popularity}</p>
                             <p class="overview">${favorite.overview}</p>           
-                            <button class="remove-from-favorites">Remove</button>
+                            
                             <div>
                                 <label for="movie-rating">Rate</label>
                                 <select id="movie-rating" name="movie-rating">

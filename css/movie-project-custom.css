@@ -50,6 +50,13 @@ img {
 .backSide-text-color{
     color: #a89d9d;
 }
+.remove-from-favorites {
+    border-radius: 50%;
+}
+.remove-from-favorites:hover {
+    background-color: red;
+}
+
 /*start of card effect for searched movies*/
 .myCard {
     background-color: transparent;
