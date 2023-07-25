@@ -203,6 +203,7 @@ const renderSearchedMovies = async (filterParam) => {
             console.log(serchedMovieParentDiv);
             const response = await addToFavorites(result);
             console.log(response);
+            renderFavoriteMovies(await getFavoriteMovies());
         })
     })
 };
@@ -232,12 +233,13 @@ const renderSearchedMovies = async (filterParam) => {
                 console.log(`from within event listener...=>`, firstFilter); // Now firstFilter variable is available!!!
                 renderSearchedMovies(firstFilter);
 
+
             }
         });
     });
 
 
-    const favorites = await getFavoriteMovies();
+    let favorites = await getFavoriteMovies();
     console.log(favorites);
     renderFavoriteMovies(favorites);
 
