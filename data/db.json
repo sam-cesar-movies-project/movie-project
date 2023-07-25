@@ -125,27 +125,6 @@
     },
     {
       "adult": false,
-      "backdrop_path": "/zndjQ64SrM5Bo6xMuofCYP8yBhd.jpg",
-      "genre_ids": [
-        18
-      ],
-      "id": 22881,
-      "original_language": "en",
-      "original_title": "The Blind Side",
-      "overview": "The story of Michael Oher, a homeless and traumatized boy who became an All American football player and first round NFL draft pick with the help of a caring woman and her family.",
-      "popularity": 138.368,
-      "poster_path": "/bMgq7VBriuBFknXEe9E9pVBYGZq.jpg",
-      "release_date": "2009-11-20",
-      "title": "The Blind Side",
-      "video": false,
-      "vote_average": 7.687,
-      "vote_count": 5751,
-      "genre_names": [
-        "Drama"
-      ]
-    },
-    {
-      "adult": false,
       "backdrop_path": "/rzdPqYx7Um4FUZeD8wpXqjAUcEm.jpg",
       "genre_ids": [
         18,
@@ -240,6 +219,58 @@
         "Family",
         "Comedy",
         "Fantasy"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/4HodYYKEIsGOdinkGi2Ucz6X9i0.jpg",
+      "genre_ids": [
+        28,
+        12,
+        16,
+        878
+      ],
+      "id": 569094,
+      "original_language": "en",
+      "original_title": "Spider-Man: Across the Spider-Verse",
+      "overview": "After reuniting with Gwen Stacy, Brooklyn’s full-time, friendly neighborhood Spider-Man is catapulted across the Multiverse, where he encounters the Spider Society, a team of Spider-People charged with protecting the Multiverse’s very existence. But when the heroes clash on how to handle a new threat, Miles finds himself pitted against the other Spiders and must set out on his own to save those he loves most.",
+      "popularity": 1239.773,
+      "poster_path": "/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg",
+      "release_date": "2023-05-31",
+      "title": "Spider-Man: Across the Spider-Verse",
+      "video": false,
+      "vote_average": 8.49,
+      "vote_count": 2442,
+      "genre_names": [
+        "Action",
+        "Adventure",
+        "Animation",
+        "Science Fiction"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/ztZ4vw151mw04Bg6rqJLQGBAmvn.jpg",
+      "genre_ids": [
+        28,
+        878,
+        12
+      ],
+      "id": 27205,
+      "original_language": "en",
+      "original_title": "Inception",
+      "overview": "Cobb, a skilled thief who commits corporate espionage by infiltrating the subconscious of his targets is offered a chance to regain his old life as payment for a task considered to be impossible: \"inception\", the implantation of another person's idea into a target's subconscious.",
+      "popularity": 141.27,
+      "poster_path": "/edv5CZvWj09upOsy2Y6IwDhK8bt.jpg",
+      "release_date": "2010-07-15",
+      "title": "Inception",
+      "video": false,
+      "vote_average": 8.364,
+      "vote_count": 34055,
+      "genre_names": [
+        "Action",
+        "Science Fiction",
+        "Adventure"
       ]
     }
   ]

@@ -203,7 +203,9 @@ const renderSearchedMovies = async (filterParam) => {
             console.log(serchedMovieParentDiv);
             const response = await addToFavorites(result);
             console.log(response);
-            renderFavoriteMovies(await getFavoriteMovies());
+            const favMoviesDiv = document.querySelector('#favorite-movies');
+            favMoviesDiv.innerHTML = ``;
+            await renderFavoriteMovies(await getFavoriteMovies());
         })
     })
 };
