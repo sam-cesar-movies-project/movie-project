@@ -149,7 +149,7 @@ const editFavorites = async (favoriteObj, selectedRating) => {
     // add update the rating
     const movie = {
         ...favoriteObj,
-        rating: selectedRating
+        rating: parseFloat(selectedRating)
     }
     const options = {
         method: 'PUT',
@@ -168,6 +168,9 @@ const renderFavoriteMovies = async (favoritesParam) => {
     console.log(favoritesParam);
     const favMoviesDiv = document.querySelector('#favorite-movies');
     favoritesParam.forEach(favorite => {
+        // if (typeof favorite.rating === 'undefined') {
+        //     favorite.rating = 1;
+        // }
         const dynamicMovieCard = document.createElement('div');
         dynamicMovieCard.classList.add("align-items-center", "favorite-cards", "col");
         dynamicMovieCard.innerHTML = `
@@ -175,6 +178,7 @@ const renderFavoriteMovies = async (favoritesParam) => {
                 <img src="https://image.tmdb.org/t/p/w500/${favorite.poster_path}">
                 <h2>${favorite.original_title}</h2>
                 <p>${favorite.genre_names.join(", ")}</p>
+                <p>Rating: ${favorite.rating ? favorite.rating : 1}</p>
                 <p>Popularity: ${favorite.popularity}</p>
                 <p class="overview">${favorite.overview}</p>           
                 <button class="remove-from-favorites">Remove</button>
