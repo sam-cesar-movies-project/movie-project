@@ -116,6 +116,13 @@ async function handleMovieSearch (genres) {
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
 // CRUD ...............................
+// 'GETTER function' ... get movies from favorites, db.json
+const getFavoriteMovies = async () => {
+    const response = await fetch(`${DOMAIN}/favorites`);
+    const favorites = await response.json();
+    return favorites;
+}
+
 // Delete favMovie function...
 const deleteFavMovie = async (id) => {
     const options = {
@@ -129,11 +136,18 @@ const deleteFavMovie = async (id) => {
     return apiResonse;
 };
 
-// 'GETTER function' ... get movies from favorites, db.json
-const getFavoriteMovies = async () => {
-    const response = await fetch(`${DOMAIN}/favorites`);
-    const favorites = await response.json();
-    return favorites;
+// Add to favorite movies...
+const addToFavorites = async (resultParam) => {
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(resultParam)
+    };
+    const response = await fetch(`${DOMAIN}/favorites`, options);
+    const apiResponse = response.json();
+    return apiResponse;
 }
 
 // 'RENDER function' ... render favorite movies dynamically
@@ -149,7 +163,7 @@ const renderFavoriteMovies = async (favoritesParam) => {
                 <h2>${favorite.original_title}</h2>
                 <p>${favorite.genre_names.join(", ")}</p>
                 <p>Popularity: ${favorite.popularity}</p>
-                <p>${favorite.overview}</p>           
+                <p class="overview">${favorite.overview}</p>           
                 <button class="remove-from-favorites">Remove</button>
             </form>
         `;
@@ -163,7 +177,35 @@ const renderFavoriteMovies = async (favoritesParam) => {
             dynamicMovieCard.remove();
         })
     })
-}
+};
+
+const renderSearchedMovies = async (filterParam) => {
+    console.log(filterParam);
+    const serchedMovieParentDiv = document.querySelector('#searched-movies');
+    serchedMovieParentDiv.innerHTML = ``;
+    filterParam.forEach(result => {
+        const dynamicSearchedMovie = document.createElement('div');
+        dynamicSearchedMovie.classList.add("align-items-center", "searched-cards", "col");
+        dynamicSearchedMovie.innerHTML = `
+            <form>
+                <img src="https://image.tmdb.org/t/p/w500/${result.poster_path}">
+                <h2>${result.original_title}</h2>
+                <p>${result.genre_names.join(", ")}</p>
+                <p>Popularity: ${result.popularity}</p>
+                <p class="overview">${result.overview}</p>
+                <button class="add-to-favorites">Add to Favorites</button>
+            </form>
+        `;
+        serchedMovieParentDiv.appendChild(dynamicSearchedMovie);
+        let addBtn = dynamicSearchedMovie.querySelector('#add-to-favorites');
+        addBtn.addEventListener('click', async(e) => {
+            e.preventDefault();
+            console.log(serchedMovieParentDiv);
+            const response = await addToFavorites(result);
+            console.log(response);
+        })
+    })
+};
 
 // ------------------------------------------------------------------------------------------------
 // IIFE...
@@ -188,6 +230,7 @@ const renderFavoriteMovies = async (favoritesParam) => {
                 console.log(searchBar.value);
                 const firstFilter = await handleMovieSearch(genres);
                 console.log(`from within event listener...=>`, firstFilter); // Now firstFilter variable is available!!!
+                renderSearchedMovies(firstFilter);
             }
         });
     });

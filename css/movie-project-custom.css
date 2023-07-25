@@ -6,6 +6,8 @@
 
 .favorite-cards {
     border: solid black .5rem;
+    width: calc(20% - 10px);
+    flex: 0 0 calc(20% - 10px);
 }
 
 img {
@@ -14,4 +16,12 @@ img {
 
 .searched-cards {
     border: solid black .5rem;
+    width: calc(20% - 10px);
+    flex: 0 0 calc(20% - 10px);
+}
+
+.overview {
+    max-height: 190px;
+    max-width: 215px;
+    overflow: hidden;
 }
