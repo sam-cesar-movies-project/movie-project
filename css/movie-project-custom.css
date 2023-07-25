@@ -39,22 +39,30 @@ img {
     border-radius: 2rem;
     color: black;
 }
-.backSide p{
+
+.backSide p {
     margin-bottom: 0;
     font-weight: normal;
 }
-.backSide h2{
+
+.backSide h2 {
     font-size: 1.5rem;
     margin-bottom: 0;
 }
-.backSide-text-color{
+
+.backSide-text-color {
     color: #a89d9d;
 }
+
 .remove-from-favorites {
+    float: right;
+    transform: translateX(100%);
+    border: 1px solid gray;
     border-radius: 50%;
-}
-.remove-from-favorites:hover {
-    background-color: red;
+    padding: 0.4em;
+    background: black;
+    color: white;
+    text-decoration: none;
 }
 
 /*start of card effect for searched movies*/
