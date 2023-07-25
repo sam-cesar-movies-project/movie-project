@@ -225,12 +225,22 @@ const renderSearchedMovies = async (filterParam) => {
         dynamicSearchedMovie.classList.add("align-items-center", "searched-cards", "col");
         dynamicSearchedMovie.innerHTML = `
             <form>
-                <img src="https://image.tmdb.org/t/p/w500/${result.poster_path}">
-                <h2>${result.original_title}</h2>
-                <p>${result.genre_names.join(", ")}</p>
-                <p>Popularity: ${result.popularity}</p>
-                <p class="overview">${result.overview}</p>
-                <button class="add-to-favorites">Add to Favorites</button>
+                <div class="myCard">
+                    <div class="innerCard">
+                        <div class="frontSide">
+                            <img src="https://image.tmdb.org/t/p/w500/${result.poster_path}">                           
+                        </div>
+                        <div class="backSide">
+                        <h2>${result.original_title}</h2>
+                            <p>${result.genre_names.join(", ")}</p>
+                            <p>Popularity: ${result.popularity}</p>
+                            <p class="overview">${result.overview}</p>
+                            <button class="add-to-favorites">Add to Favorites</button>
+                        </div>
+                    </div>
+                </div>
+                
+                
             </form>
         `;
         serchedMovieParentDiv.appendChild(dynamicSearchedMovie);
