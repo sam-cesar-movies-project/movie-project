@@ -165,6 +165,7 @@ const renderFavoriteMovies = async (favoritesParam) => {
                 <p>Popularity: ${favorite.popularity}</p>
                 <p class="overview">${favorite.overview}</p>           
                 <button class="remove-from-favorites">Remove</button>
+                <button>edit</button>
             </form>
         `;
         favMoviesDiv.appendChild(dynamicMovieCard);
