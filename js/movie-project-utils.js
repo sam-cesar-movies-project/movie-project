@@ -164,6 +164,7 @@ export const editFavorites = async (favoriteObj, selectedRating) => {
 
 // 'RENDER function' ... render favorite movies dynamically
 export const renderFavoriteMovies = async (favoritesParam) => {
+
     console.log(favoritesParam);
     const favMoviesDiv = document.querySelector('#favorite-movies');
     const movieNodes = favoritesParam.map(favorite => {
