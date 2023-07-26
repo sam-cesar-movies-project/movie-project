@@ -167,6 +167,7 @@ export const renderFavoriteMovies = async (favoritesParam) => {
 
     console.log(favoritesParam);
     const favMoviesDiv = document.querySelector('#favorite-movies');
+    favMoviesDiv.innerHTML = '';
     const movieNodes = favoritesParam.map(favorite => {
         // if (typeof favorite.rating === 'undefined') {
         //     favorite.rating = 1;
@@ -234,7 +235,21 @@ export const renderFavoriteMovies = async (favoritesParam) => {
             console.log(ratingSelect.value);
             const response = await editFavorites(favorite, ratingSelect.value);
             console.log(response);
-            location.reload();
+
+            // Sledge hammer effect.
+            // get all the movies again from db
+            // sort them all again
+            // render them all again
+            // we changed render to clear the parent div before appending so this step works
+            // REMEMBER the function itself fires up on page load, at that point the function ran all the way thru.
+                // The event listener fires up the function again!
+            const favorites = await getFavoriteMovies();
+            console.log(favorites);
+            let favoritesRatingSorted = favorites.sort((a, b) => {
+                return b.rating - a.rating;
+            })
+            console.log(favoritesRatingSorted);
+            await renderFavoriteMovies(favoritesRatingSorted);
 
         })
         favMoviesDiv.appendChild(dynamicMovieCard);
