@@ -68,7 +68,7 @@ img {
     text-decoration: none;
 }
 
-/*start of card effect for searched movies*/
+/*start of card effect for movies*/
 .myCard {
     background-color: transparent;
     width: 190px;
@@ -160,6 +160,4 @@ img {
     }
 }
 
-/*end of card effect for searched movies*/
-
-/*start of card effect for favorite cards*/
+/*end of card effect for movies*/

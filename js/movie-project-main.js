@@ -253,6 +253,7 @@ const renderFavoriteMovies = async (favoritesParam) => {
     })
 };
 
+//function to render searched movies....
 const renderSearchedMovies = async (filterParam) => {
     console.log(filterParam);
     const serchedMovieParentDiv = document.querySelector('#searched-movies');
