@@ -254,29 +254,31 @@
     },
     {
       "adult": false,
-      "backdrop_path": "/3MSrtN9M6V8te4XYWeaO2x8EesO.jpg",
+      "backdrop_path": "/vV5knD9jlW8QaOhCgf4129hbIIh.jpg",
       "genre_ids": [
-        28,
+        10751,
         16,
         35,
-        10751
+        878,
+        10770
       ],
-      "id": 268531,
+      "id": 980804,
       "original_language": "en",
-      "original_title": "Captain Underpants: The First Epic Movie",
-      "overview": "Based on the bestselling book series, DreamWorks Animation presents the long-awaited global movie event, Captain Underpants. This outrageous family comedy tells the story of two overly imaginative pranksters, George (Kevin Hart) and Harold (Thomas Middleditch), who hypnotize their principal (Ed Helms) into thinking he’s an enthusiastic, yet dimwitted, superhero named Captain Underpants.",
-      "popularity": 32.898,
-      "poster_path": "/vVWwCv5WjDpddG2JsDPVPBmmP1e.jpg",
-      "release_date": "2017-06-01",
-      "title": "Captain Underpants: The First Epic Movie",
+      "original_title": "LEGO Star Wars Summer Vacation",
+      "overview": "Looking for a much-needed break, Finn arranges a surprise vacation for his friends Rey, Poe, Rose, Chewie, BB-8, R2-D2, and C-3PO, aboard the luxurious Halcyon. However, Finn's plan to have one last hurrah together quickly goes awry.",
+      "popularity": 15.573,
+      "poster_path": "/2SatEFCs04oFRqkZuY1fODYXeFI.jpg",
+      "release_date": "2022-08-05",
+      "title": "LEGO Star Wars Summer Vacation",
       "video": false,
-      "vote_average": 6.238,
-      "vote_count": 1080,
+      "vote_average": 6.04,
+      "vote_count": 62,
       "genre_names": [
-        "Action",
+        "Family",
         "Animation",
         "Comedy",
-        "Family"
+        "Science Fiction",
+        "TV Movie"
       ]
     }
   ]

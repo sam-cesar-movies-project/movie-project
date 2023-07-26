@@ -36,8 +36,17 @@ img {
 }
 
 .add-to-favorites {
-    border-radius: 2rem;
-    color: black;
+    position: absolute;
+    top: -14px;
+    right: -17px;
+    width: 35px;
+    aspect-ratio: 1/1;
+    border: 1px solid gray;
+    border-radius: 50%;
+    padding: 0.4em;
+    background: black;
+    color: white;
+    text-decoration: none;
 }
 
 .backSide p {
@@ -56,7 +65,7 @@ img {
 
 .remove-from-favorites {
     position: absolute;
-    top: -14px;
+    top: -10px;
     right: -17px;
     width: 35px;
     aspect-ratio: 1/1;
