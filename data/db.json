@@ -21,7 +21,8 @@
       "genre_names": [
         "Animation",
         "Family"
-      ]
+      ],
+      "rating": 1
     },
     {
       "adult": false,
@@ -46,7 +47,8 @@
         "Fantasy",
         "Drama",
         "Mystery"
-      ]
+      ],
+      "rating": 1
     },
     {
       "adult": false,
@@ -72,7 +74,7 @@
         "Comedy",
         "Fantasy"
       ],
-      "rating": 4
+      "rating": 2
     },
     {
       "adult": false,
@@ -98,7 +100,7 @@
         "Science Fiction",
         "Adventure"
       ],
-      "rating": 3
+      "rating": 2
     },
     {
       "adult": false,
@@ -176,7 +178,8 @@
         "Adventure",
         "Action",
         "Science Fiction"
-      ]
+      ],
+      "rating": 1
     },
     {
       "adult": false,
