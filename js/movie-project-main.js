@@ -45,6 +45,11 @@ console.log(`hello from movie-project-main.js`);
     console.log(favoritesRatingSorted);
     await renderFavoriteMovies(favoritesRatingSorted);
 
+    // Tooltip Testing
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    console.log(tooltipTriggerList);
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
 
 
 })();
