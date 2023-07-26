@@ -256,6 +256,8 @@ const renderFavoriteMovies = async (favoritesParam) => {
 const renderSearchedMovies = async (filterParam) => {
     console.log(filterParam);
     const serchedMovieParentDiv = document.querySelector('#searched-movies');
+    const mainResultsTitle = document.querySelector('#results-main-title');
+    mainResultsTitle.innerHTML = `<h2>RESULTS...</h2>`;
     serchedMovieParentDiv.innerHTML = ``;
     filterParam.forEach(result => {
         const dynamicSearchedMovie = document.createElement('div');
