@@ -4,14 +4,22 @@
     flex-direction: column;
 }
 
-.favorite-cards {
-    width: calc(20% - 10px);
-    flex: 0 0 calc(20% - 10px);
-    margin-bottom: 5rem;
+.background {
+    background-color: black;
+}
+
+#search-bar {
+    width: 40rem;
 }
 
 img {
     max-width: 100%;
+}
+/* everything below is focused on cards */
+.favorite-cards {
+    width: calc(20% - 10px);
+    flex: 0 0 calc(20% - 10px);
+    margin-bottom: 5rem;
 }
 
 .searched-cards {
@@ -20,19 +28,24 @@ img {
     margin-bottom: 5rem;
 }
 
+.backSide h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+.backSide p {
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+.backSide-text-color {
+    color: #a89d9d;
+}
+
 .overview {
     max-height: 190px;
     max-width: 215px;
     overflow: hidden;
-}
-
-.background {
-    background-color: black;
-}
-
-#search-bar {
-    width: 40rem;
-
 }
 
 .add-to-favorites {
@@ -47,20 +60,6 @@ img {
     background: black;
     color: white;
     text-decoration: none;
-}
-
-.backSide p {
-    margin-bottom: 0;
-    font-weight: normal;
-}
-
-.backSide h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0;
-}
-
-.backSide-text-color {
-    color: #a89d9d;
 }
 
 .remove-from-favorites {
@@ -78,19 +77,21 @@ img {
 }
 
 #rate-btn{
-    /*position: absolute;*/
-    /*top: -14px;*/
-    /*right: -17px;*/
     width: 35px;
     aspect-ratio: 1/1;
-    /*border: 1px solid gray;*/
-    border: 1px #A62A2B;
+    border: none;
     border-radius: 50%;
     padding: 0.4em;
-    /*background: black;*/
     background-color: #A62A2B;
     color: white;
     text-decoration: none;
+}
+#rate-btn :hover {
+    color: black;
+}
+
+.tooltip-inner {
+    width: 150%;
 }
 
 /*start of card effect for movies*/
@@ -184,5 +185,4 @@ img {
         opacity: 0.3;
     }
 }
-
 /*end of card effect for movies*/
