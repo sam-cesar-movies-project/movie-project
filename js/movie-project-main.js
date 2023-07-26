@@ -39,7 +39,11 @@ console.log(`hello from movie-project-main.js`);
 
     let favorites = await getFavoriteMovies();
     console.log(favorites);
-    await renderFavoriteMovies(favorites);
+    let favoritesRatingSorted = favorites.sort((a, b) => {
+        return b.rating - a.rating;
+    })
+    console.log(favoritesRatingSorted);
+    await renderFavoriteMovies(favoritesRatingSorted);
 
 
 
