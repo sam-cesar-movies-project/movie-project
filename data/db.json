@@ -251,6 +251,33 @@
         "Action",
         "Science Fiction"
       ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/3MSrtN9M6V8te4XYWeaO2x8EesO.jpg",
+      "genre_ids": [
+        28,
+        16,
+        35,
+        10751
+      ],
+      "id": 268531,
+      "original_language": "en",
+      "original_title": "Captain Underpants: The First Epic Movie",
+      "overview": "Based on the bestselling book series, DreamWorks Animation presents the long-awaited global movie event, Captain Underpants. This outrageous family comedy tells the story of two overly imaginative pranksters, George (Kevin Hart) and Harold (Thomas Middleditch), who hypnotize their principal (Ed Helms) into thinking he’s an enthusiastic, yet dimwitted, superhero named Captain Underpants.",
+      "popularity": 32.898,
+      "poster_path": "/vVWwCv5WjDpddG2JsDPVPBmmP1e.jpg",
+      "release_date": "2017-06-01",
+      "title": "Captain Underpants: The First Epic Movie",
+      "video": false,
+      "vote_average": 6.238,
+      "vote_count": 1080,
+      "genre_names": [
+        "Action",
+        "Animation",
+        "Comedy",
+        "Family"
+      ]
     }
   ]
 }
