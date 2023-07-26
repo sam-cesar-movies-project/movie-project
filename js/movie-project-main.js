@@ -163,6 +163,21 @@ const editFavorites = async (favoriteObj, selectedRating) => {
     return apiResponse;
 }
 
+
+// Attempt at loading rated movie withouth refreshing page.
+// Function to access specific resource from local db.json
+// const getSingleFavMov = async (favoriteId) => {
+//     const options = {
+//         method: 'GET',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         }
+//     }
+//     const response = await fetch(`${DOMAIN}/favorites/${favoriteId}`, options);
+//     const favorite = await response.json();
+//     return favorite;
+// }
+
 // 'RENDER function' ... render favorite movies dynamically
 const renderFavoriteMovies = async (favoritesParam) => {
     console.log(favoritesParam);
@@ -227,6 +242,13 @@ const renderFavoriteMovies = async (favoritesParam) => {
             console.log(ratingSelect.value);
             const response = await editFavorites(favorite, ratingSelect.value);
             console.log(response);
+
+            // Attempt at loading rated movie withouth refreshing page.
+            // dynamicMovieCard.remove();
+            // await getSingleFavMov(favorite.id);
+
+            // return updatedRatedMovie;
+
         })
     })
 };
