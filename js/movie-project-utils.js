@@ -161,24 +161,13 @@ export const editFavorites = async (favoriteObj, selectedRating) => {
 }
 
 
-// Attempt at loading rated movie withouth refreshing page.
-// Function to access specific resource from local db.json
-// const getSingleFavMov = async (favoriteId) => {
-//     const options = {
-//         method: 'GET',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         }
-//     }
-//     const response = await fetch(`${DOMAIN}/favorites/${favoriteId}`, options);
-//     const favorite = await response.json();
-//     return favorite;
-// }
 
 // 'RENDER function' ... render favorite movies dynamically
 export const renderFavoriteMovies = async (favoritesParam) => {
+
     console.log(favoritesParam);
     const favMoviesDiv = document.querySelector('#favorite-movies');
+    favMoviesDiv.innerHTML = '';
     const movieNodes = favoritesParam.map(favorite => {
         // if (typeof favorite.rating === 'undefined') {
         //     favorite.rating = 1;
@@ -248,14 +237,27 @@ export const renderFavoriteMovies = async (favoritesParam) => {
             const response = await editFavorites(favorite, ratingSelect.value);
             console.log(response);
 
-            // Attempt at loading rated movie withouth refreshing page.
-            // dynamicMovieCard.remove();
-            // await getSingleFavMov(favorite.id);
+            // Sledge hammer effect.
+            // get all the movies again from db
+            // sort them all again
+            // render them all again
+            // we changed render to clear the parent div before appending so this step works
+            // REMEMBER the function itself fires up on page load, at that point the function ran all the way thru.
+                // The event listener fires up the function again!
+            const favorites = await getFavoriteMovies();
+            console.log(favorites);
+            let favoritesRatingSorted = favorites.sort((a, b) => {
+                return b.rating - a.rating;
+            })
+            console.log(favoritesRatingSorted);
+            await renderFavoriteMovies(favoritesRatingSorted);
+
         })
         favMoviesDiv.appendChild(dynamicMovieCard);
         return dynamicMovieCard;
     });
-    return movieNodes;
+    console.log(movieNodes);
+    return movieNodes
 };
 
 export const renderSearchedMovies = async (filterParam) => {

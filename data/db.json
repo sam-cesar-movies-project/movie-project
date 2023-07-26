@@ -22,7 +22,7 @@
         "Animation",
         "Family"
       ],
-      "rating": 1
+      "rating": 4
     },
     {
       "adult": false,
@@ -48,7 +48,7 @@
         "Drama",
         "Mystery"
       ],
-      "rating": 1
+      "rating": 2
     },
     {
       "adult": false,
@@ -100,7 +100,7 @@
         "Science Fiction",
         "Adventure"
       ],
-      "rating": 2
+      "rating": 1
     },
     {
       "adult": false,
@@ -130,33 +130,6 @@
     },
     {
       "adult": false,
-      "backdrop_path": "/lVfqLDmfrxIXFU2TcWTsG3ePdER.jpg",
-      "genre_ids": [
-        10751,
-        16,
-        12,
-        35
-      ],
-      "id": 5559,
-      "original_language": "en",
-      "original_title": "Bee Movie",
-      "overview": "Barry B. Benson, a bee who has just graduated from college, is disillusioned at his lone career choice: making honey. On a special trip outside the hive, Barry's life is saved by Vanessa, a florist in New York City. As their relationship blossoms, he discovers humans actually eat honey, and subsequently decides to sue us.",
-      "popularity": 52.14,
-      "poster_path": "/tX2mgKFUkzFMZingSVD4vioZNz2.jpg",
-      "release_date": "2007-10-28",
-      "title": "Bee Movie",
-      "video": false,
-      "vote_average": 6.013,
-      "vote_count": 4420,
-      "genre_names": [
-        "Family",
-        "Animation",
-        "Adventure",
-        "Comedy"
-      ]
-    },
-    {
-      "adult": false,
       "backdrop_path": "/zqkmTXzjkAgXmEWLRsY4UpTWCeo.jpg",
       "genre_ids": [
         12,
@@ -179,7 +152,7 @@
         "Action",
         "Science Fiction"
       ],
-      "rating": 1
+      "rating": 5
     },
     {
       "adult": false,
@@ -204,31 +177,6 @@
         "Fantasy"
       ],
       "rating": 3
-    },
-    {
-      "adult": false,
-      "backdrop_path": "/q7M0JpPixbEYT8EhnI7wTEMONxz.jpg",
-      "genre_ids": [
-        878,
-        28,
-        12
-      ],
-      "id": 13475,
-      "original_language": "en",
-      "original_title": "Star Trek",
-      "overview": "The fate of the galaxy rests in the hands of bitter rivals. One, James Kirk, is a delinquent, thrill-seeking Iowa farm boy. The other, Spock, a Vulcan, was raised in a logic-based society that rejects all emotion. As fiery instinct clashes with calm reason, their unlikely but powerful partnership is the only thing capable of leading their crew through unimaginable danger, boldly going where no one has gone before. The human adventure has begun again.",
-      "popularity": 56.852,
-      "poster_path": "/9vaRPXj44Q2meHgt3VVfQufiHOJ.jpg",
-      "release_date": "2009-05-06",
-      "title": "Star Trek",
-      "video": false,
-      "vote_average": 7.431,
-      "vote_count": 9214,
-      "genre_names": [
-        "Science Fiction",
-        "Action",
-        "Adventure"
-      ]
     },
     {
       "adult": false,
