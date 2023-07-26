@@ -219,7 +219,7 @@ const renderFavoriteMovies = async (favoritesParam) => {
                                     <option value="2">2</option>
                                     <option value="1" selected>1</option>
                                 </select>
-                                <button id="rate-btn">submit rating</button>
+                                <button id="rate-btn">add rating</button>
                             </div>
                         </div>
                     </div>
@@ -253,11 +253,12 @@ const renderFavoriteMovies = async (favoritesParam) => {
     })
 };
 
+//function to render searched movies....
 const renderSearchedMovies = async (filterParam) => {
     console.log(filterParam);
     const serchedMovieParentDiv = document.querySelector('#searched-movies');
     const mainResultsTitle = document.querySelector('#results-main-title');
-    mainResultsTitle.innerHTML = `<h2>RESULTS...</h2>`;
+    mainResultsTitle.innerHTML = `<h2>Your Search Results..</h2>`;
     serchedMovieParentDiv.innerHTML = ``;
     filterParam.forEach(result => {
         const dynamicSearchedMovie = document.createElement('div');
@@ -274,12 +275,14 @@ const renderSearchedMovies = async (filterParam) => {
                             <p>${result.genre_names.join(", ")}</p>
                             <p class="backSide-text-color">Popularity: ${result.popularity}</p>
                             <p class="overview">${result.overview}</p>
-                            <button class="add-to-favorites">Add to Favorites</button>
+                            <button class="add-to-favorites">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+                            </svg>
+                            </button>
                         </div>
                     </div>
                 </div>
-                
-                
             </form>
         `;
         serchedMovieParentDiv.appendChild(dynamicSearchedMovie);
