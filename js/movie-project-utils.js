@@ -195,6 +195,22 @@ export const renderFavoriteMovies = async (favoritesParam) => {
                             </div>
                             <p>${favorite.genre_names.join(", ")}</p>
                             <p class="backSide-text-color">Rating: ${favorite.rating ? favorite.rating : 1}</p>
+                            
+                            
+<!--                            MODAL ATTEMPT START -->
+                            <!-- Trigger/Open The Modal -->
+<!--                            <button id="myBtn">Open Modal</button>-->
+                                <!-- The Modal -->
+<!--                                <div id="myModal" class="modal">-->
+                                    <!-- Modal content -->
+<!--                                        <div class="modal-content">-->
+<!--                                            <span class="close">&times;<p>Content will go here ....</p></span>-->
+<!--                                        </div>-->
+<!--                                </div>-->
+<!--                            MODAL ATTEMPT END -->
+                            
+                            
+                            
                             <p class="backSide-text-color">Popularity: ${favorite.popularity}</p>
                             <p class="overview">${favorite.overview}</p>           
                             
@@ -220,6 +236,21 @@ export const renderFavoriteMovies = async (favoritesParam) => {
                 </div>               
             </form>
         `;
+
+        // Modal ATTEMPT EVENT LISTENERS START ------------------------------------------------
+        // let modal = dynamicMovieCard.querySelector('#myModal');
+        // let modalBtn = dynamicMovieCard.querySelector('#myBtn');
+        // let spanClose = dynamicMovieCard.querySelector('.close');
+        // modalBtn.onclick = async function (e) {
+        //     e.preventDefault();
+        //     modal.style.display = "block";
+        // }
+        // spanClose.onclick = async function (e) {
+        //     e.preventDefault();
+        //     modal.style.display = "none";
+        // }
+        // Modal ATTEMPT EVENT LISTENERS END ------------------------------------------------
+
 
         let removeBtn = dynamicMovieCard.querySelector('.remove-from-favorites');
         removeBtn.addEventListener('click', async(e) => {
