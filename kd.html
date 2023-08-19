@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>KD Movies</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/KDMovies.css">
+</head>
+<body data-bs-theme="dark">
+<!--start of Navbar/search-->
+<nav class="navbar mt-2 mb-2">
+  <div class="container-fluid">
+    <img id="pop" src="img/popcorn-joypixels-unscreen.gif">
+    <a class="navbar-title">KD Movies</a>
+    <form class="container navbar" role="search">
+      <input class="form-control me-2" type="search" id="search" placeholder="Search any movie here"
+             aria-label="Search">
+      <i class="fa-solid fa-magnifying-glass fa-beat-fade"></i>
+    </form>
+  </div>
+</nav>
+<!--End of Navbar/search-->
+
+<!--start of search row-->
+<div>
+  <div class="container-wrapper my-5 " id="srch-card">
+    <h1 id="searchQueryHeader" style="display: none;"></h1>
+    <div class="row container4" id="container4"></div>
+  </div>
+  <!-- end of search input-->
+
+  <!--Start of Carousel-->
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/KB.jpeg" class="d-block w-100" alt="Kill Bill Poster" data-video-id="DjUi-P4gm6k">
+        <button id="killbill" type="button" onclick="window.location.href='https://youtu.be/7kSuas6mRpk'" class="btn btn-primary watchTrailerButton">Watch Trailer</button>
+      </div>
+      <div class="carousel-item">
+        <img src="img/akira.jpeg" class="d-block w-100" alt="...">
+        <button type="button" class="btn btn-primary watchTrailerButton" onclick="window.location.href='https://youtu.be/NPpDGk2U8_c'">Watch Trailer</button>
+
+      </div>
+      <div class="carousel-item">
+        <img src="img/GG.jpeg" class="d-block w-100" alt="...">
+        <button type="button" class="btn btn-primary watchTrailerButton" onclick="window.location.href='https://youtu.be/2-_-1nJf8Vg'" >Watch Trailer</button>
+
+      </div>
+      <div class="carousel-item">
+        <img src="img/MegMi.jpeg" class="d-block w-100" alt="...">
+        <button type="button" class="btn btn-primary watchTrailerButton" onclick="window.location.href='https://youtu.be/bixkC-ZrH34'">Watch Trailer</button>
+      </div>
+    </div>
+  </div>
+  <div id="videoPlayerContainer" style="display: none;">
+    <div id="videoPlayer"></div>
+  </div>
+  <!--End of carousel-->
+  <!--Start of Fav Cards-->
+  <div class="container-wrapper my-5 " id="f-card">
+    <h1>My Favorites</h1>
+    <div class="row container5" id="container5"></div>
+  </div>
+  <!--End of Fav Cards-->
+
+  <!--Start of Popular Cards-->
+  <h1>Popular</h1>
+  <div class="container-wrapper my-5" id="movie-card">
+    <div class="row container1" id="container1"></div>
+  </div>
+  <!--End of Popular Cards-->
+
+  <!--Start of Top Rated Cards-->
+  <h1>Top Rated Movies</h1>
+  <div class="container-wrapper my-5 " id="mo-card">
+    <div class="row container3" id="container3"></div>
+  </div>
+  <!--End of Top Rated Cards-->
+
+  <!--Start of Coming To Theaters Cards-->
+  <h1>Coming To Theaters</h1>
+  <div class="container-wrapper my-5 " id="m-card">
+    <div class="row container2" id="container2"></div>
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+<script src="js/keys.js"></script>
+<script src="js/index.js"></script>
+<script src="js/kd.js"></script>
+<script src="https://kit.fontawesome.com/26be4b7af1.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
